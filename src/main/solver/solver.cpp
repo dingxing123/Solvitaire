@@ -435,7 +435,7 @@ void solver::print_result_csv(solver::result res) {
          << ", " << res.cache_size
          << ", " << res.cache_bucket_count
          << ", " << res.max_depth
-         << ", " << res.depth << "\n";;
+         << ", " << res.depth << "\n";
 }
 
 void solver::print_null_seed_info() {
