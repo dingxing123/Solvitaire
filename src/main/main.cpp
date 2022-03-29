@@ -151,7 +151,7 @@ void solve_input_files(const vector<string> input_files, const sol_rules& rules,
             const Document in_doc = json_helper::get_file_json(input_file);
 
             LOG_INFO ("Attempting to solve " << input_file << "...");
-            cout << "==========Attempting to solveu " << input_file << "...\n";
+            cout << "==========Attempting to solve " << input_file << "\n";
             solve_game(rules, clh, none, in_doc);
 
         } catch (const runtime_error& error) {
