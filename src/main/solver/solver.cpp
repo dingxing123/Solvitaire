@@ -425,7 +425,7 @@ void solver::print_header(long t, command_line_helper::streamliner_opt stream_op
 }
 
 void solver::print_result_csv(solver::result res) {
-    cout << ", " << res.sol_type
+    cout << "Result: " << res.sol_type
          << ", " << res.time.count()
          << ", " << res.states_searched
          << ", " << res.unique_states_searched
@@ -435,7 +435,7 @@ void solver::print_result_csv(solver::result res) {
          << ", " << res.cache_size
          << ", " << res.cache_bucket_count
          << ", " << res.max_depth
-         << ", " << res.depth;
+         << ", " << res.depth << "\n";;
 }
 
 void solver::print_null_seed_info() {
