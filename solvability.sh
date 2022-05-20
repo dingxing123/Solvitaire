@@ -10,7 +10,7 @@ fi
 seeds="$1"
 cores="$2"
 sol_command="$3"
-minramfree="100G"
+minramfree="1G"
 out="$4"
 time_command="/usr/bin/time -f \" %e, %U, %S\""
 combine_command="sed -e 'H;\${x;s/\n/,/g;s/^,//;p;};d'"
