@@ -101,7 +101,7 @@ card::rank_t card::get_rank() const {
 }
 
 std::string card::to_string() const {
-    if (face_down) return "##";
+    //if (face_down) return "##"; // Code is commented by dennis
 
     string s;
     switch(card_rank) {
@@ -117,7 +117,10 @@ std::string card::to_string() const {
         case card::suit::Clubs   : s += "C"; break;
         case card::suit::Diamonds: s += "D"; break;
     }
-    return s;
+    if (face_down) // edit by dennis
+        return "#" + s;
+    else
+        return s;
 }
 
 bool card::is_face_down() const {
