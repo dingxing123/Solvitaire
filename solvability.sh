@@ -3,14 +3,14 @@
 
 if [ "$#" != 4 ]; then
     echo "Usage: <seeds> <cores> \"<solvitaire_command>\" <output_file>"
-    echo "e.g.: ./solvability.sh 1000 40 \"sol --type alpha-star --timeout 6000 --str smart-solvability\" results"
+    echo "e.g.: ./solvability.sh 1000 40 \"./solvitaire --type alpha-star --timeout 6000 --str smart-solvability\" results"
     exit 1
 fi
 
 seeds="$1"
 cores="$2"
 sol_command="$3"
-minramfree="1G"
+minramfree="100G"
 out="$4"
 time_command="/usr/bin/time -f \" %e, %U, %S\""
 combine_command="sed -e 'H;\${x;s/\n/,/g;s/^,//;p;};d'"
