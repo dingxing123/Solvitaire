@@ -4,7 +4,7 @@
     "build policy": "any-suit",
     "move built group": "yes",
     "move built group policy": "same-suit",
-    "face up cards": "top"
+    "face up cards": "all"
   },
   "foundations": {
     "only complete pile moves": true
