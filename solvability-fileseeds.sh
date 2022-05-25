@@ -3,7 +3,7 @@
 
 if [ "$#" != 5 ]; then
     echo "Usage: <from> <to> <cores> \"<solvitaire_command>\" <output_file>"
-    echo "e.g.: ./solvability-fileseeds <seedsfile> 40 50G \"./solvitaire --type alpha-star --timeout 6000 --str smart-solvability\" results"
+    echo "e.g.: ./solvability-fileseeds <seedsfile> 4 2G \"./solvitaire --type spider --timeout 6000 --str smart-solvability\" results/test"
     exit 1
 fi
 
