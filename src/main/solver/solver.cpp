@@ -425,7 +425,7 @@ void solver::print_header(long t, command_line_helper::streamliner_opt stream_op
 }
 
 void solver::print_result_csv(solver::result res) {
-    cout << "Result: " << res.sol_type
+    cout << ", " << res.sol_type
          << ", " << res.time.count()
          << ", " << res.states_searched
          << ", " << res.unique_states_searched
