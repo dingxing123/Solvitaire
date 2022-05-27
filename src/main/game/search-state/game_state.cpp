@@ -149,7 +149,8 @@ game_state::game_state(const sol_rules& s_rules, const Document& doc, streamline
 // Constructs an initial game state from a seed
 game_state::game_state(const sol_rules& s_rules, int seed, streamliner_options s_opts)
         : game_state(s_rules, s_opts) {
-    auto rng = mt19937(seed);
+    //auto rng = mt19937(seed);
+    std::mt19937 rng(seed);
     vector<card> deck = gen_shuffled_deck(rules.max_rank, rules.two_decks, rng);
 
     if (rules.hole) {
@@ -333,13 +334,16 @@ template<class RandomIt, class URBG>
 void game_state::shuffle(RandomIt first, RandomIt last, URBG&& g) {
     typedef typename std::iterator_traits<RandomIt>::difference_type diff_t;
     typedef boost::random::uniform_int_distribution<diff_t> distr_t;
-    typedef typename distr_t::param_type param_t;
+    //typedef typename distr_t::param_type param_t;
 
     distr_t D;
     diff_t n = last - first;
+    
     for (diff_t i = n-1; i > 0; --i) {
         using std::swap;
-        swap(first[i], first[D(g, param_t(0, i))]);
+        
+        //swap(first[i], first[D(g, param_t(0, i))]);
+        swap(first[i], first[g() % (i + 1)]);
     }
 }
 
